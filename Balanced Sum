@@ -1,0 +1,19 @@
+int balancedSum(int n, int* arr) {
+     for (int i = 1; i < n; i++) {
+        int leftSum = 0;
+        for (int j = i - 1; j >= 0; j--) {
+            leftSum += arr[j];
+        }
+ 
+        int rightSum = 0;
+        for (int k = i + 1; k < n; k++) {
+            rightSum += arr[k];
+        }
+ 
+        if (leftSum == rightSum) {
+            return i;
+        }
+    }
+ 
+    return -1;
+}
